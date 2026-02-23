@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Quinta de los Dos Juanes</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f7f4ef; margin:0; }
+    header { background:#7a3e1d; color:#fff; padding:20px; text-align:center; }
+    section { padding:30px; max-width:1000px; margin:auto; }
+    .productos { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+    .producto { background:#fff; padding:20px; border-radius:10px; text-align:center; box-shadow:0 2px 6px rgba(0,0,0,.1); }
+    button { background:#7a3e1d; color:#fff; border:none; padding:10px; border-radius:5px; cursor:pointer; }
+    button:hover { background:#5e2f16; }
+    .precio { font-weight:bold; color:#2e7d32; }
+    .carrito { background:#fff; margin-top:30px; padding:20px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,.1); }
+    footer { background:#ddd; text-align:center; padding:15px; margin-top:30px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>La Quinta de los Dos Juanes</h1>
+  <p>Conservas artesanales</p>
+  <p>📞 Contacto / WhatsApp: +54 6110343</p>
+</header>
+
+<section>
+  <div class="productos">
+    
+    <div class="producto">
+      <h3>Dulce de Tomate</h3>
+      <p class="precio">$5.700</p>
+      <button onclick="agregar('Dulce de Tomate',5700)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <h3>Berenjenas al Escabeche</h3>
+      <p class="precio">$6.500</p>
+      <button onclick="agregar('Berenjenas al Escabeche',6500)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <h3>Morrón con Aceite y Vinagre</h3>
+      <p class="precio">$7.200</p>
+      <button onclick="agregar('Morrón con Aceite y Vinagre',7200)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <h3>Dulce de Ciruela</h3>
+      <p class="precio">$8.000</p>
+      <button onclick="agregar('Dulce de Ciruela',8000)">Agregar</button>
+    </div>
+
+    <!-- NUEVOS PRODUCTOS TODOS A 7800 -->
+
+    <div class="producto">
+      <h3>Dulce de Higos</h3>
+      <p class="precio">$7.800</p>
+      <button onclick="agregar('Dulce de Higos',7800)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <h3>Higos en Almíbar</h3>
+      <p class="precio">$7.800</p>
+      <button onclick="agregar('Higos en Almíbar',7800)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <h3>Zapallo en Almíbar</h3>
+      <p class="precio">$7.800</p>
+      <button onclick="agregar('Zapallo en Almíbar',7800)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <h3>Dulce de Zapallo</h3>
+      <p class="precio">$7.800</p>
+      <button onclick="agregar('Dulce de Zapallo',7800)">Agregar</button>
+    </div>
+
+  </div>
+
+  <div class="carrito">
+    <h2>🛒 Carrito</h2>
+    <ul id="lista"></ul>
+    <p><strong>Total: $<span id="total">0</span></strong></p>
+    <p>Finalizá la compra por WhatsApp o teléfono.</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 La Quinta de los Dos Juanes</p>
+</footer>
+
+<script>
+let total = 0;
+function agregar(nombre, precio){
+  const li = document.createElement('li');
+  li.textContent = nombre + ' - $' + precio;
+  document.getElementById('lista').appendChild(li);
+  total += precio;
+  document.getElementById('total').textContent = total;
+}
+</script>
+
+</body>
+</html>
